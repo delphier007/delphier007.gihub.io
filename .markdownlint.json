@@ -1,0 +1,14 @@
+{
+  "line-length": false,
+  "no-inline-html": {
+    "allowed_elements": [
+      "a",
+      "span",
+      "p",
+      "badge",
+      "style",
+      "div",
+      "button"
+    ]
+  }
+}
