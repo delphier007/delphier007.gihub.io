@@ -178,7 +178,7 @@ git clone https://github.com/Delphier007/markdown
 
 Con el comando `git push origin nombre_rama` enviamos los cambios realizados al repositorio remoto. Si utilizamos `git push origin --all` subimos TODOS los cambios del repositorio.
 
-Añadir que con `git push origin :rama` eliminamos la rama del remoto, ya que con `git branch -d rama` se borra en local y al hacer `git push --all` no se borra dicha **rama** del repositorio. Si quisiéramos borrar la rama antes de subir la local haríamos: `git push origin rama:rama` <Badge text="Revisar!" type="warn"/>.
+Añadir que con `git push origin :rama` eliminamos la rama del remoto, ya que con `git branch -d rama` se borra en local y al hacer `git push --all` no se borra dicha **rama** del repositorio. Si quisiéramos hacer `push` de una rama local en una rama remota con otro nombre (exista o no) haríamos: `git push origin rama:otra_rama`.
 
 ### git fetch
 
@@ -313,5 +313,3 @@ Si tengo varios *commit* y quiero fusionarlos en uno para limpiar el historial c
 ```sh
 git rebase -i HEAD~4 // se coloca justo antes de los últimos 4 que quiero fusionar/aplastar/reordenar...
 ```
-<!-- table of contents -->
-[[toc]]

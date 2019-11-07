@@ -12,4 +12,7 @@ Porque queremos... No hay otra razón. Nos sirve para practicar ***Markdown*** y
 
 La documentación estará llena de errores de los que aprenderemos corrigiéndolos. No tiene ningún interés para otras personas ya que no nos consideramos gurús de la programación.
 
-***Disclaimer***: Somos bastante novatos en esto y solo pretendemos aprender por el camino. Así que estáis advertidos por si, por error, llegáis a esta página.
+::: danger DISCLAIMER <badge type="tip" text="Aviso a navegantes!" vertical="middle"/>
+Somos bastante novatos en esto y solo pretendemos aprender por el camino. Así que estáis advertidos por si, por error, llegáis a esta página.
+:::
+

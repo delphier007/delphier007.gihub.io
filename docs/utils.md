@@ -25,6 +25,9 @@ will be imported at the end of the root stylus config file, as a config, it will
 
 ### Badge <Badge text="beta" type="warn"/> <Badge text="0.10.1+"/> <Badge text="default theme"/>
 
+<badge text="Holasss" type="warn" vertical="middle"/>
+<!-- vertical: top|middle      type: tip|warn|error -->
+<!-- https://v1.vuepress.vuejs.org/guide/using-vue.html#built-in-components -->
 <!-- emojis -->
 :100: :tada: :1234: :innocent:
 

@@ -8,7 +8,9 @@
   },
   "scripts": {
     "docs:dev": "vuepress dev --temp .temp docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "push": "git push -f origin master:source",
+    "publicar": "sh publicar-web.sh"
   },
   "author": "",
   "license": "ISC",
