@@ -93,6 +93,20 @@ git log --oneline --decorate --graph
 
 El modificador `--all` muestra los *commit* de todas las ramas. Por defecto (sin --all) muestra los de la rama activa.
 
+### git stash
+
+Este comando tiene cierta complejidad. Este [enlace](https://git-scm.com/book/es/v1/Las-herramientas-de-Git-Guardado-r%C3%A1pido-provisional) contine una explicación más detallada.
+
+Según se está trabajando en un apartado de un proyecto, normalmente el espacio de trabajo suele estar en un estado inconsistente. Pero puede que se necesite cambiar de rama durante un breve tiempo para ponerse a trabajar en algún otro tema urgente. Esto plantea el problema de confirmar cambios en un trabajo medio hecho, simplemente para poder volver a ese punto más tarde. Y su solución es el comando 'git stash'.
+
+Este comando de guardado rápido (stashing) toma el estado del espacio de trabajo, con todas las modificaciones en los archivos bajo control de cambios, y lo guarda en una pila provisional. Desde allí, se podrán recuperar posteriormente y volverlas a aplicar de nuevo sobre el espacio de trabajo.
+
+Lo más básico es hacer `git stash` y los trabajos pendientes se guardan en una pila de donde más tarde se puede recuperar el estado anterior con `git stash apply`.
+
+Las modificaciones sobre los archivos serán aplicadas; pero no así el estado de preparación. Para conseguir esto último, es necesario ejecutar `git stash --index`. Con ello se le indica que debe intentar reaplicar también el estado de preparación de los archivos. Y asi se puede conseguir volver exactamente al punto original. Luego habría que hacer un `git stash drop stash@{0}` donde 0 es el índice que aparece en `git stash list`.
+
+También es posible utilizar el comando git stash pop, que aplica cambios de un guardado y lo retira inmediatamente de la pila.
+
 ### Alias
 
 Podemos crear un alias para un comando, con o sin modificadores, que utilicemos a menudo para escribir menos. Por ejemplo:

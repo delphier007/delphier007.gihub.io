@@ -1,6 +1,6 @@
 # TYPESCRIPT
 
-## Introducción a Typescript
+## Introducción
 
 ## Primeros pasos
 
