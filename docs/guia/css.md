@@ -380,8 +380,91 @@ Como su nombre indica, seleciona elementos por algún atributo. Los atributos se
   /* Tiene su utilidad para los estilos como los de boostrap, materialize, etc: text-danger, text-succsess o algo así...*/
 }
 ```
-
 <!-- Final CSS esencial -->
+
+## Especificidad, cascada y herencia
+
+### Especificidad
+
+Cuando se aplican distintos estilos a un elemento, ya se intencionadamente o por error, o porque hemos enlazado una librería tipo Normalize, Bootstrap, etc., el navegador debe saber cuál es el estilo que debe aplicar finalmente.
+
+Este cálculo lo hace el navegador mediante la especificidad del selector de dicho elemento, la cual se calcula aplicando un *peso* de la siguiente forma:
+
+* Elementos (tags) y pseudo-elemntos: 1
+* Clases, atributos y pseudo-clases: 10
+* IDs: 100
+* Estilos inline: 1000
+* !Important (gana a todos) - Muy mala práctica.
+
+Ejemplos:
+
+```css
+body /* 1 */
+
+body#main /* 101 */
+
+body#main .header p /* 112 supongamos que aplica color: green */
+
+body#main .header p /* supongamos que en el html tenga un
+estilo inline que dice color: red -> Sería rojo */
+```
+
+::: tip CALCULADORA
+En esta [web](https://specificity.keegan.st/) disponemos de una calculadora de especificidad (no incluye estilos online).
+:::
+
+### Cascada
+
+El navegador va aplicando los estilos de arriba a abajo. Es decir, los estilos que están más abajo en el código sobreescriben a los estilos anteriores sobre el mismo elemento **siempre que tengamos la misma *especifidad***. Evidentemente, a distinta especificidad no tiene en cuenta la cascada, solo la mayor especificidad.
+
+::: tip ESTILOS COMPUTADOS POR EL NAVEGADOR
+La pestaña *computed* del navegador (Chrome) nos va a dar mucha información de cómo y por qué renderiza el elemento final de es manera (propiedades sobreescritas, por ejemplo...). Muy útil.
+:::
+
+### Herencia
+
+Esencialmente indica que los hijos heredan *algunas* propiedades de los padres. También podremos forzarlas. Veamos algunos ejemplos:
+
+```html
+<!-- La etiqueta span hereda el tamaño, tipo de fuente, color, etc... del h1 -->
+<!-- En la etiqueta styles del navegador veremos en los estilos del span el texto *inherited from h1* -->
+<h1>Hola <span>mundo</span></h1>
+```
+
+Dentro del concepto de herencia podemos obligar a un elemento que heredere un estilo concreto para sobreescribir los estilos que se le aplican, por ejemplo, por defecto desde el navegador. Un caso típico es es siguiente:
+
+```html
+<!-- Aquí veríamos (si no utilizamos ninguna librería de estilos) el texto en negro y Google en azul (predeterminado al ser un enlace) -->
+<p> Este es un enlace
+  <a href="https://google.com">Google</a>
+</p>
+```
+
+Si aplicamos los siguientes estilos (no tened en cuenta que son con etiquetas, es solo un ejemplo), el enlace tomará los mismos estilos básicos del párrafo (tamaño de letra, color, etc...).
+
+```css
+p a {
+  color: inherit;
+}
+```
+
+#### Initial
+
+Es un valor permitido en todas las propiedades CSS. Fuerza la utilización del valor inicial de la propiedad para el elemento al cual se aplica. En el ejemplo anterior:
+
+```html
+<!-- La etiqueta span hereda el tamaño, tipo de fuente, color, etc... del h1 -->
+<!-- En la etiqueta styles del navegador veremos en los estilos del span el texto *inherited from h1* -->
+<h1>Hola <span>mundo</span></h1>
+```
+
+Si aplicamos el siguiente estilo veremos como se aplica el tamaño por defecto a *mundo* dentro del *span*. O sea, un tamaño de letra más pequeño que el del h1, ya que estamos evitando que herede.
+
+```css
+span {
+  font-size: initial;
+}
+```
 
 ## Pseudoelementos
 
