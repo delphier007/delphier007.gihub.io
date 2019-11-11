@@ -36,7 +36,7 @@ por la terraza de madera"
 
 ## Listas desordenadas
 
-Para generar listas desordenadas podemos utilizar los siguientes caracteres: `*, + y -` al inicio de cada item. Los subniveles se forman añadiendo una tabulación.
+Para generar listas desordenadas podemos utilizar los siguientes caracteres: `*, + y -` al inicio de cada item. Los subniveles se forman añadiendo una tabulación o 2 espacios.
 
 ```md
 * Generado con *
@@ -57,17 +57,17 @@ Las listas ordenadas se generan numerando con el dígito y un punto. Veamos un e
 
 ```md
 1. Primer nivel
-    1. Subnivel (con 4 espacios o 2TABs si se tiene configurado en VS Code como TAB=2 espacios). Recomendado utilizar los espacios.
-    2. Subnivel
-        * Se pueden combinar listas sin ordenar y ordenadas
-        * En esta vamos a hacer otro nivel ordenado
-    3. Con más subniveles ordenados
-        1. Otro elemento
-        2. Otro más
-            1. Otro subnivel más
-            2. Otro subnivel más
-        3. Y otro más
-            1. El último
+  1. Subnivel (con 2 espacios o un TAB si se tiene configurado en VS Code como TAB=2 espacios). Recomendado utilizar los espacios.
+  2. Subnivel
+    * Se pueden combinar listas sin ordenar y ordenadas
+    * En esta vamos a hacer otro nivel ordenado
+  3. Con más subniveles ordenados
+    1. Otro elemento
+    2. Otro más
+      1. Otro subnivel más
+      2. Otro subnivel más
+    3. Y otro más
+      1. El último
 2. Segundo item
 
 <!-- Comentario pariniciar la nueva lista, ya que si no continúa con la numeración (3) -->

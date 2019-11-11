@@ -15,4 +15,3 @@ La documentación estará llena de errores de los que aprenderemos corrigiéndol
 ::: danger DISCLAIMER <badge type="tip" text="Aviso a navegantes!" vertical="middle"/>
 Somos bastante novatos en esto y solo pretendemos aprender por el camino. Así que estáis advertidos por si, por error, llegáis a esta página.
 :::
-
